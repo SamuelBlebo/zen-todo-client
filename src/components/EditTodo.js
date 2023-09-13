@@ -6,7 +6,7 @@ export default function EditTodo({ todo, onUpdate }) {
   const handleUpdate = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/todos/${todo.todo_id}`,
+        `https://zen-todo-server.vercel.app/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: {
