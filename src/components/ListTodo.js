@@ -35,7 +35,12 @@ export default function ListTodo() {
   // get todos function
   const getTodos = async () => {
     try {
-      const response = await fetch("https://zen-todo-server.vercel.app/todos");
+      const response = await fetch("https://zen-todo-client.vercel.app" ,{
+        method: "GET",
+        body:{
+          "my-url":"https://zen-todo-server.vercel.app/todos"
+        }
+      });
       const jsonData = await response.json();
 
       setTodos(jsonData);
