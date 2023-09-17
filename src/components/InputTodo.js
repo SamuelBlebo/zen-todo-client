@@ -15,19 +15,24 @@ export default function InputTodo() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-
-      // Check if the response indicates a successful submission
+  
       if (response.ok) {
         // Clear the form fields
         setDescription("");
         console.log("Posted");
+        window.location = "/"; // Redirect after successful submission
+      } else {
+        // Handle errors and provide user feedback
+        console.error("Failed to post task");
+        // You can display an error message to the user here
       }
-      window.location = "/";
     } catch (err) {
       console.error(err.message);
+      // Handle network errors and provide user feedback
+      // You can display an error message to the user here
     }
   };
-
+  
   return (
     <div className="">
       <h1 className="font-bold text-[24px] mb-[10px] ml-1">Zen Task</h1>
