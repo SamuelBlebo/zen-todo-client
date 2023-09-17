@@ -20,7 +20,7 @@ export default function InputTodo() {
         // Clear the form fields
         setDescription("");
         console.log("Posted");
-        window.location = "/"; // Redirect after successful submission
+        // window.location = "/"; // Redirect after successful submission
       } else {
         // Handle errors and provide user feedback
         console.error("Failed to post task");
