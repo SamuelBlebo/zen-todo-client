@@ -35,19 +35,17 @@ export default function ListTodo() {
   // get todos function
   const getTodos = async () => {
     try {
-      const response = await fetch("https://zen-todo-client.vercel.app" ,{
+      const response = await fetch("https://zen-todo-server.vercel.app/todos", {
         method: "GET",
-        body:{
-          "my-url":"https://zen-todo-server.vercel.app/todos"
-        }
       });
       const jsonData = await response.json();
-
+  
       setTodos(jsonData);
     } catch (err) {
       console.error(err.message);
     }
   };
+  
 
   useEffect(() => {
     getTodos();
