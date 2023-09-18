@@ -54,7 +54,7 @@ export default function ListTodo() {
   };
 
   return (
-    <div className="   flex flex-col">
+    <div className="flex flex-col">
       <div className="mt-[25px]">
       <InputTodo onTodoAdded={handleTodoAdded} />
       </div>
