@@ -63,7 +63,7 @@ export default function ListTodo() {
               key={todo.todo_id}
               className="flex items-center justify-center mb-2 lg:mb-4"
             >
-              <td className="w-[180px] lg:w-[260px] xl:w-[380px] bg-green-300 h-[40px] lg:h-[50px] flex items-center rounded-l-lg px-[25px]">
+              <td className="w-[180px] lg:w-[260px] xl:w-[400px] bg-green-300 h-[40px] lg:h-[50px] flex items-center rounded-l-lg px-[25px]">
                 {editingTodo === todo.todo_id ? (
                   <EditTodo todo={todo} onUpdate={updateTodo} />
                 ) : (
