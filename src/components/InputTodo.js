@@ -36,8 +36,8 @@ export default function InputTodo({ onTodoAdded }) {
 
   return (
     <div className="">
-      <h1 className="font-bold text-[24px] mb-[10px] ml-1">Zen Task</h1>
-      <form onSubmit={onSubmitForm} className="flex">
+      <h1 className="font-bold text-[24px] mb-[10px] ml-1 sticky top-0 ">Zen Task</h1>
+      <form onSubmit={onSubmitForm} className="flex sticky top-0">
         <input
           type="text"
           placeholder="Type your task here"
