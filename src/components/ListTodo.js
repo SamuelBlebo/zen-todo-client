@@ -54,7 +54,7 @@ export default function ListTodo() {
   };
 
   return (
-    <div className="overflow-x-auto no-scrollbar h-[450px] lg:h-[600px]">
+    <div className="overflow-x-auto no-scrollbar h-[450px] lg:h-[600px] relative">
       <InputTodo onTodoAdded={handleTodoAdded} />
       <table className="table mt-5">
         <tbody>
