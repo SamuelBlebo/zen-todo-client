@@ -54,11 +54,11 @@ export default function ListTodo() {
   };
 
   return (
-    <div className=" h-[450px] lg:h-[600px] flex flex-col">
+    <div className="   flex flex-col">
       <div className="mt-[25px]">
       <InputTodo onTodoAdded={handleTodoAdded} />
       </div>
-      <div className="overflow-x-auto no-scrollbar">
+      <div className="overflow-x-auto no-scrollbar h-[450px] lg:h-[600px]">
       <table className="table mt-5">
         <tbody>
           {todos.map((todo) => (
