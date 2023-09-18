@@ -54,8 +54,11 @@ export default function ListTodo() {
   };
 
   return (
-    <div className="overflow-x-auto no-scrollbar h-[450px] lg:h-[600px]">
+    <div className=" h-[450px] lg:h-[600px] flex flex-col">
+      <div>
       <InputTodo onTodoAdded={handleTodoAdded} />
+      </div>
+      <div className="overflow-x-auto no-scrollbar">
       <table className="table mt-5">
         <tbody>
           {todos.map((todo) => (
@@ -82,6 +85,8 @@ export default function ListTodo() {
           ))}
         </tbody>
       </table>
+      </div>
+      
     </div>
   );
 }
