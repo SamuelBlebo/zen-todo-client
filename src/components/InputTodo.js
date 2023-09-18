@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-export default function InputTodo() {
+export default function InputTodo({ onTodoAdded }) {
   const [description, setDescription] = useState("");
 
   const onSubmitForm = async (e) => {
@@ -15,12 +15,13 @@ export default function InputTodo() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-  
+
       if (response.ok) {
         // Clear the form fields
         setDescription("");
         console.log("Posted");
-        // window.location = "/"; // Redirect after successful submission
+        // Call the callback function to notify the parent component about the new todo
+        onTodoAdded();
       } else {
         // Handle errors and provide user feedback
         console.error("Failed to post task");
@@ -32,7 +33,7 @@ export default function InputTodo() {
       // You can display an error message to the user here
     }
   };
-  
+
   return (
     <div className="">
       <h1 className="font-bold text-[24px] mb-[10px] ml-1">Zen Task</h1>
@@ -42,7 +43,7 @@ export default function InputTodo() {
           placeholder="Type your task here"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className=" w-[200px] lg:w-[280px] xl:w-[400px] h-[45px] lg:h-[50px] px-[30px] rounded-l-lg"
+          className="w-[200px] lg:w-[280px] xl:w-[400px] h-[45px] lg:h-[50px] px-[30px] rounded-l-lg"
         />
         <button
           className="bg-black h-[45px] lg:h-[50px] w-[50px] lg:w-[70px] text-[#fff] text-[25px] rounded-r-lg flex justify-center items-center"
