@@ -55,7 +55,7 @@ export default function ListTodo() {
 
   return (
     <div className=" h-[450px] lg:h-[600px] flex flex-col">
-      <div>
+      <div className="mt-[25px]">
       <InputTodo onTodoAdded={handleTodoAdded} />
       </div>
       <div className="overflow-x-auto no-scrollbar">
